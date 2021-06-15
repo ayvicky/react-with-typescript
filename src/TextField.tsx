@@ -14,19 +14,27 @@ interface Props {
     obj?: {
         f1: string
     };
-    person: Person
+    person: Person;
+    handleChange: () => void;
 
 }
 
+interface TextNode {
+    text: string
+}
+
 export const TextField: React.FC<Props> = ({
-    person,
-    text
+    handleChange
 }) => {
     const [count, setCount] = React.useState<number | null | undefined | string>(5);
-    const [title, setTitle] = React.useState<{text: string}>(5);
+    const [title, setTitle] = React.useState<TextNode>({text: 'hello'});
+    const inputRef = React.useRef<HTMLInputElement>(null);
+    const divRef = React.useRef<HTMLDivElement>(null);
+
+    setCount('hello');
     return(
-        <div>
-            <input />
+        <div ref={divRef}>
+            <input ref={inputRef} onChange={handleChange} />
         </div>
     )
 }
