@@ -40,7 +40,7 @@ export const TextField: React.FC<Props> = ({
                 e.preventDefault();
             }}/>
             <Counter>
-                {(count, setCount) => (
+                {({count, setCount}) => (
                     <div>
                         {count}
                         <button onClick={() => setCount(count + 1)}>+</button>
