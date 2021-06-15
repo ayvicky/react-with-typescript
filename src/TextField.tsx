@@ -22,7 +22,8 @@ export const TextField: React.FC<Props> = ({
     person,
     text
 }) => {
-    const [count, setCount] = React.useState(5);
+    const [count, setCount] = React.useState<number | null | undefined | string>(5);
+    const [title, setTitle] = React.useState<{text: string}>(5);
     return(
         <div>
             <input />
