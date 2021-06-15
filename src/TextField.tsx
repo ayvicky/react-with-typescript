@@ -15,7 +15,7 @@ interface Props {
         f1: string
     };
     person: Person;
-    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
 }
 
