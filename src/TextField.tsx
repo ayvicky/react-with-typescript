@@ -15,7 +15,7 @@ interface Props {
         f1: string
     };
     person: Person;
-    handleChange: () => void;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
 }
 
@@ -34,7 +34,9 @@ export const TextField: React.FC<Props> = ({
     setCount('hello');
     return(
         <div ref={divRef}>
-            <input ref={inputRef} onChange={handleChange} />
+            <input ref={inputRef} onChange={e => {
+                e.preventDefault();
+            }}/>
         </div>
     )
 }
