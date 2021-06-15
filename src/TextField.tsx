@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Counter} from './Counter';
+
 interface Person {
     firstName: string
     lastName: string
@@ -37,6 +39,14 @@ export const TextField: React.FC<Props> = ({
             <input ref={inputRef} onChange={e => {
                 e.preventDefault();
             }}/>
+            <Counter>
+                {({count, setCount}) => (
+                    <div>
+                        {count}
+                        <button onClick={() => setCount(count + 1)}>+</button>
+                    </div>
+                )}
+            </Counter>
 
         </div>
     )
