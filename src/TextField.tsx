@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TextField = () => {
+export const TextField: React.FC<{ text: string}> = () => {
     return(
         <div>
             <input />
